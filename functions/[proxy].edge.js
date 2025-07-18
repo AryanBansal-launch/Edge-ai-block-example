@@ -31,7 +31,8 @@ export default async function handler(request) {
     ];
   
     const url = new URL(request.url);
-  
+    console.log('Request URL:', url.toString());
+    console.log('hostname:', url.hostname);
     if (redirectHosts.includes(url.hostname)) {
       url.hostname = 'pranav-joshi.csnonprod.com';
       console.log('Redirecting to:', url.toString());
