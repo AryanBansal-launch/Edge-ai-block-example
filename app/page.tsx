@@ -1,16 +1,40 @@
 import Image from "next/image";
+import { headers } from 'next/headers';
 
-export default function Home() {
-  // Get the current URL dynamically
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+export default async function Home() {
+  // Get the current URL directly from the request
+  const getBaseUrl = async () => {
+    try {
+      const headersList = await headers();
+      // Try to get the full request URL from headers
+      const referer = headersList.get('referer');
+      const host = headersList.get('host');
+      const protocol = headersList.get('x-forwarded-proto') || 'http';
+      
+      if (referer) {
+        const url = new URL(referer);
+        return `${url.protocol}//${url.host}`;
+      }
+      
+      if (host) {
+        return `${protocol}://${host}`;
+      }
+    } catch (error) {
+      // Fallback if headers are not available
+    }
+    
+    // Fallback for development
+    return 'http://localhost:3000';
+  };
   
+  const baseUrl = await getBaseUrl();
   const curlCommand = `curl -A "GPTbot" ${baseUrl}/`;
   
   return (
     <div className="font-sans min-h-screen bg-gradient-to-br from-purple-50 to-white">
       <div className="container mx-auto px-8 py-16">
         <main className="flex flex-col items-center text-center max-w-4xl mx-auto">
-                    {/* Contentstack Logo */}
+          {/* Contentstack Logo */}
           <div className="mb-8">
             <Image
               src="/Contentstack_Logo.jpg"
