@@ -24,16 +24,17 @@
 //     return fetch(request);
 //   }
 
-export default async function handler(request, context) {
+export default async function handler(request) {
     const redirectHosts = [
-      'https://nextjs-launch-challenge-eee898.devcontentstackapps.com',
-      'https://nextjs-app-router-csr.devcontentstackapps.com/'
+      'edge-ai-block-example.devcontentstackapps.com/',
+      'edge-ai-block-example.devcontentstackapps.com/123'
     ];
   
     const url = new URL(request.url);
   
     if (redirectHosts.includes(url.hostname)) {
-      url.hostname = 'https://consent-test.devcontentstackapps.com/';
+      url.hostname = 'pranav-joshi.csnonprod.com';
+      console.log('Redirecting to:', url.toString());
       return Response.redirect(url.toString(), 308); // permanent redirect
     }
   
