@@ -24,25 +24,3 @@ const KNOWN_BOTS = [
     return fetch(request);
   }
 
-
-// export default async function handler(request) {
-//     const redirectHosts = [
-//       'www1.csnonprod.com',
-//       'www2.csnonprod.com',
-//       'www3.csnonprod.com',
-//       'www4.csnonprod.com',
-//     ];
-  
-//     const url = new URL(request.url);
-  
-//     if (redirectHosts.includes(url.hostname)) {
-//       url.hostname = 'www.csnonprod.com';
-//       return Response.redirect(url.toString(), 308);
-//     }
-  
-//     return fetch(request);
-<<<<<<< HEAD
-//   }
-=======
-//   }
->>>>>>> ed95ccd (modified edge)
