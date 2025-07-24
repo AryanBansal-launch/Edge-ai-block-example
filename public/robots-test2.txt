@@ -1,0 +1,50 @@
+# Test 2: Extended Bot List
+# This tests the Edge Function with more bot patterns
+
+# AI Crawlers
+User-agent: claudebot
+Disallow: /
+
+User-agent: gptbot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+# Search Engines (blocked for testing)
+User-agent: googlebot
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
+
+# SEO Tools
+User-agent: ahrefsbot
+Disallow: /
+
+User-agent: semrushbot
+Disallow: /
+
+User-agent: mj12bot
+Disallow: /
+
+# Social Media
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: twitterbot
+Disallow: /
+
+# Additional Test Bots
+User-agent: testbot
+Disallow: /
+
+User-agent: crawler-test
+Disallow: /
+
+# Allow all other bots
+User-agent: *
+Allow: / 
