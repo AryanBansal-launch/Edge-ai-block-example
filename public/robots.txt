@@ -1,50 +1,5 @@
-# Sample robots.txt file for AI Crawler Management
-# This file is read by the Edge Function to determine which bots to block
-
-# Block AI Crawlers
-User-agent: claudebot
+User-agent: Googlebot
 Disallow: /
 
-User-agent: gptbot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-# Allow Search Engines (but you can block them too if needed)
-User-agent: googlebot
-Allow: /
-
-User-agent: bingbot
-Allow: /
-
-# Block SEO Tools
-User-agent: ahrefsbot
-Disallow: /
-
-User-agent: semrushbot
-Disallow: /
-
-User-agent: mj12bot
-Disallow: /
-
-# Block Social Media Crawlers
-User-agent: facebookexternalhit
-Disallow: /
-
-User-agent: twitterbot
-Disallow: /
-
-# Block Other Known Bots
-User-agent: yandexbot
-Disallow: /
-
-# Allow all other bots by default
 User-agent: *
-Allow: /
-
-# Sitemap (optional)
-Sitemap: https://yourdomain.com/sitemap.xml 
+Disallow:

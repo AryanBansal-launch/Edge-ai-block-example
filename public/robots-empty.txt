@@ -1,9 +1,0 @@
-# Empty robots.txt test
-# This file has no User-agent directives to test fallback behavior
-
-# Allow all bots
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://example.com/sitemap.xml 
