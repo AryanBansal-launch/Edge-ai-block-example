@@ -1,5 +1,5 @@
 User-agent: Googlebot
-Disallow: /
+Disallow: /test
 
 User-agent: *
 Disallow:
